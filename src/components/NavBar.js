@@ -1,32 +1,17 @@
+import styles from "../stylessheets/NavBar.module.scss";
+
+const NavBarLinks = ["Apresentação", "Projetos", "Tecnologias"];
+
 export default function NavBar() {
   return (
-    <div style={{ backgroundColor: "#808080" }}>
-      <a
-        style={{
-          fontWeight: "600",
-          fontFamily: "monospace",
-          fontSize: "1rem",
-        }}
-      >
-        Jvian.dev
-      </a>
-      <ul
-        style={{
-          listStyle: "none",
-          display: "inline-flex",
-          justifyContent: "space-around",
-          width: "50%",
-        }}
-      >
-        <li>
-          <a href="#">Apresentação</a>
-        </li>
-        <li>
-          <a href="#">Projetos</a>
-        </li>
-        <li>
-          <a href="#">Tecnologias</a>
-        </li>
+    <div className={styles.NavBar}>
+      <a className={styles.RootLink}>Jvian.dev</a>
+      <ul className={styles.NavBarLinks}>
+        {NavBarLinks.map((link) => (
+          <li>
+            <a href="#">{link}</a>
+          </li>
+        ))}
       </ul>
     </div>
   );
